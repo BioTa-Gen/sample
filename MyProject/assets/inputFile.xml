@@ -1,0 +1,85 @@
+<?xml version ="1.0" encoding ="UTF-8" ?>
+<biota>
+ <!-- English  -->
+	<Name>Name</Name>
+	<JobProfile>Profession</JobProfile>
+	<Facebook>Facebook</Facebook>
+	<Instagram>Facebook</Instagram>
+	<Email>Facebook</Email>
+	<CompanyName>Facebook</CompanyName>
+	<Hobby>Facebook</Hobby>
+	<PersonalInformation>
+	<Name>Facebook</Name>
+	<DateOfBirth>Facebook</DateOfBirth>
+	<BirthPlace>Facebook</BirthPlace>
+	<BirthTime>Facebook</BirthTime>
+	<Colour>Facebook</Colour>
+	<Height>Facebook</Height>
+	<BloodGroup>Facebook</BloodGroup>
+	<Gotra>Facebook</Gotra>
+	<Kuldaivat>Facebook</Kuldaivat>
+	<RasName>Facebook</RasName>
+	<Cast>Facebook</Cast>
+	</PersonalInformation>
+	<Qualification>
+	<Education>Facebook</Education>
+	<Job>Facebook</Job>
+	</Qualification>
+	<FamilyInformation>
+	<FatherName>Facebook</FatherName>
+	<MotherName>Facebook</MotherName>
+	<SisterName>Facebook</SisterName>
+	<BrotherName>Facebook</BrotherName>
+	<Uncle>Facebook</Uncle>
+	<Mama>Facebook</Mama>
+	<Aatya>Facebook</Aatya>
+	<Mavshi>Facebook</Mavshi>
+	<Relatives>Facebook</Relatives>
+	</FamilyInformation>
+	<ContactMe>
+	<EmailId>Facebook</EmailId>
+	<MobileNo>Facebook</MobileNo>
+	</ContactMe>
+
+ <!-- Marathi  -->
+ 
+	<नाव>Name</नाव>
+	<कामाचेस्वरूप>Profession</कामाचेस्वरूप>
+	<फेसबुक>Facebook</फेसबुक>
+	<इंस्टाग्राम>Facebook</इंस्टाग्राम>
+	<ईमेल>Facebook</ईमेल>
+	<कंपनीचेनाव>Facebook</कंपनीचेनाव>
+	<छंद>Facebook</छंद>
+	<वैयक्तिकमाहिती>
+	<नाव>Facebook</नाव>
+	<जन्मतारीख>Facebook</जन्मतारीख>
+	<जन्मठिकाण>Facebook</जन्मठिकाण>
+	<जन्मवेळ>Facebook</जन्मवेळ>
+	<रंग>Facebook</रंग>
+	<उंची>Facebook</उंची>
+	<रक्तगट>Facebook</रक्तगट>
+	<गोत्र>Facebook</गोत्र>
+	<कुलदैवत>Facebook</कुलदैवत>
+	<रासनाव>Facebook</रासनाव>
+	<जात>Facebook</जात>
+	</वैयक्तिकमाहिती>
+	<पात्रता>
+	<शिक्षण>Facebook</शिक्षण>
+	<नोकरी>Facebook</नोकरी>
+	</पात्रता>
+	<कौटुंबिकमाहिती>
+	<वडीलांचेनाव>Facebook</वडीलांचेनाव>
+	<आईचेनाव>Facebook</आईचेनाव>
+	<बहिणीचेनाव>Facebook</बहिणीचेनाव>
+	<भावाचेनाव>Facebook</भावाचेनाव>
+	<काका>Facebook</काका>
+	<मामा>Facebook</मामा>
+	<आत्या>Facebook</आत्या>
+	<मावशी>Facebook</मावशी>
+	<नातेवाईक>Facebook</नातेवाईक>
+	</कौटुंबिकमाहिती>
+	<मलासंपर्ककरा>
+	<ई-मेलआयडी>Facebook</ई-मेलआयडी>
+	<मोबाईलक्रमांक>Facebook</मोबाईलक्रमांक>
+	</मलासंपर्ककरा>	
+</biota>
