@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Personal Site</title>
+  <base href="https://BioTa-Gen.github.io/sample/">  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+<script> displayCD(0);
+
+  function displayCD(i) {
+    var xmlhttp = new XMLHttpRequest(); 
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        myFunction(this, i);
+        alert("Asd");
+      }
+    };
+    xmlhttp.open("GET", "../../assets/CD_file.xml", true);
+    xmlhttp.send();
+  }
+
+  function myFunction(xml, i) {
+    var xmlDoc = xml.responseXML;
+    x = xmlDoc.getElementsByTagName("note");
+    document.getElementById("note").innerHTML =
+      "to: " +
+      x[i].getElementsByTagName("to")[0].childNodes[0].nodeValue +
+      "<br>from: " +
+      x[i].getElementsByTagName("from")[0].childNodes[0].nodeValue +
+      "<br>heading: " +
+      x[i].getElementsByTagName("heading")[0].childNodes[0].nodeValue;
+  }</script>
+  <link rel="stylesheet" href="styles.3ff695c00d717f2d2a11.css"></head>
+
+<body>
+  <app-root></app-root>
+<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="polyfills.bebee6a5ef0ece001bc6.js"></script><script type="text/javascript" src="main.ddf53c6e857c563e6157.js"></script></body>
+
+</html>
