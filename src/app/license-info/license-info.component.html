@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 shadow-lg p-3 bg-light rounded-lg">
+    <table id="customers" class="table table-striped table-bordered table-responsive">
+      <thead>
+        <tr>
+          <th>Tokan</th>
+          <th>Client ID</th>
+          <th>Client Name</th>
+          <th>Enckey</th>
+          <th>MAC</th>
+          <th>Version</th>
+          <th>License Mode</th>
+          <th>Created Date</th>
+          <th>Expiry Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of TenantInformation">
+        <td>{{ item.Tokan }}</td>
+        <td>{{ item.ClientID }}</td>
+        <td>{{ item.ClientName }}</td>
+        <td>{{ item.Enckey }}</td>
+        <td>{{ item.MAC }}</td>
+        <td>{{ item.Version }}</td>
+        <td>{{ item.LicenseMode }}</td>
+        <td>{{ item.CreatedDate }}</td>
+        <td>{{ item.ExpiryDate }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-2"></div>
+</div>
