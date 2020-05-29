@@ -1,11 +1,3 @@
-  <!-- <div id='note'></div> -->
-
-
-
-
-
-
-
 <div class="profile-page">
   <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="1030"
     id="sectionsNav">
@@ -42,7 +34,7 @@
     </div>
   </nav>
 
-  <div class="page-header header-filter" data-parallax="true" style="background-image:url('../../assets/paint.jpg');">
+  <div class="page-header header-filter" data-parallax="true" style="background-image:url('assets/paint.jpg');">
   </div>
   <div class="main main-raised">
     <div class="profile-content">
@@ -51,13 +43,13 @@
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile">
               <div class="avatar">
-                <img src="../../assets/Karan-profile.png" alt="Circle Image" class="ProfilePhotoRounded ">
+                <img [src]="BiotaDataModel.Photos.ProfilePhotoName" alt="Circle Image" class="ProfilePhotoRounded ">
               </div>
               <div class="name">
-                <h2 class="title" *ngIf="isEnglish">Karan Shinde</h2>
-                <h2 class="title" *ngIf="!isEnglish"> करण शिंदे</h2>
+                <h2 class="title" *ngIf="isEnglish">{{BiotaDataModel.Name.english}}</h2>
+                <h2 class="title" *ngIf="!isEnglish"> {{BiotaDataModel.Name.marathi}}</h2>
 
-                <h5>"Software Engineer"</h5>
+                <h5>"{{BiotaDataModel.JobProfile.english}}"</h5>
                 <a href="https://www.facebook.com/karan.shinde.714" class="btn btn-just-icon btn-link"
                   style="background-color: darkcyan;"><i class="fa fa-facebook-square" style="color: white;"></i></a>
                 <a href="https://www.instagram.com/kkaran_sshinde/" class="btn btn-just-icon btn-link"
@@ -70,17 +62,18 @@
         </div>
         <div class="description text-center" *ngIf="isEnglish">
           <p style="font-weight:500; font-size:17px;"><em>Software Engineer at <strong> <a
-                  href="https://new.siemens.com/in/en.html"> Siemens India Pvt Ltd.</a> </strong> Since Last 3
+                  href="https://new.siemens.com/in/en.html">{{BiotaDataModel.CompanyName.english}}</a> </strong> Since
+              Last 3
               Years.</em></p>
-          <p style="font-weight:500; font-size:17px;"><em>I love To <strong style="color:darkcyan">
-                Travel</strong> and <strong style="color:darkcyan">Play Badminton</strong>.</em></p>
+          <p style="font-weight:500; font-size:17px;"><em><strong style="color:darkcyan">
+                {{BiotaDataModel.Hobby.english}}</strong></em></p>
         </div>
         <div class="description text-center" *ngIf="!isEnglish">
-          <p style="font-weight:500; font-size:17px;"><em>मागील 3 वर्षांपासून <strong> <a
-                  href="https://new.siemens.com/in/en.html"> Siemens India Pvt Ltd.</a> </strong> येथे सॉफ्टवेअर
+          <p style="font-weight:500; font-size:17px;"><em><strong> <a href="https://new.siemens.com/in/en.html">
+                  {{BiotaDataModel.CompanyName.marathi}}</a> </strong> येथे सॉफ्टवेअर
               अभियंता.</em></p>
-          <p style="font-weight:500; font-size:17px;"><em>मला <strong style="color:darkcyan">
-                प्रवास करणे</strong> आणि <strong style="color:darkcyan">बॅडमिंटन खेळायला आवडते</strong>.</em></p>
+          <p style="font-weight:500; font-size:17px;"><em><strong style="color:darkcyan">
+                {{BiotaDataModel.Hobby.marathi}}</strong> </em></p>
         </div>
         <div class="description text-center" *ngIf="isEnglish">
           <button class="btn" style=" background-color: darkcyan;
@@ -176,47 +169,51 @@
               <div class=" card-body text-center">
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Name:</strong> </div>
-                  <div class="col-6">Karan Baban Shinde</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.FullName.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Birth Date:</strong> </div>
-                  <div class="col-6">2/12/1993</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.DateOfBirth.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Birth Place:</strong> </div>
-                  <div class="col-6">Aurangabad</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.BirthPlace.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Birth Time:</strong> </div>
-                  <div class="col-6">09:30AM</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.BirthTime.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Colour:</strong> </div>
-                  <div class="col-6">Blonde</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Colour.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Height:</strong> </div>
-                  <div class="col-6">5.8 Feet</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Height.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Blood Group:</strong> </div>
-                  <div class="col-6">B <sup>Ve+</sup></div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.BloodGroup.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Gotra:</strong> </div>
-                  <div class="col-6">Kashya</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Gotra.english}}</div>
+                </div>
+                <div class="row mb-2" style="text-align-last: left;">
+                  <div class="col-6"><strong class="text-uppercase">Ras:</strong> </div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Ras.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Kuldaivat:</strong> </div>
-                  <div class="col-6">Khandoba(Satara)</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Kuldaivat.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Ras Name:</strong> </div>
-                  <div class="col-6">Venudas</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.RasName.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Caste:</strong> </div>
-                  <div class="col-6">Hindu-Maratha</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Caste.english}}</div>
                 </div>
                 <hr style="background-color:dimgray;height:2px;">
               </div>
@@ -227,47 +224,51 @@
               <div class=" card-body text-center">
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">मुलाचे नाव:</strong> </div>
-                  <div class="col-6">चि. करण बबन शिंदे </div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.FullName.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">जन्म दिनांक:</strong> </div>
-                  <div class="col-6">२/१२/१९९३</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.DateOfBirth.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">जन्म ठिकाण:</strong> </div>
-                  <div class="col-6">औरंगाबाद</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.BirthPlace.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">जन्म वेळ:</strong> </div>
-                  <div class="col-6">९:30 सकाळ</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.BirthTime.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">रंग :</strong> </div>
-                  <div class="col-6">गोरा</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Colour.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">ऊंची:</strong> </div>
-                  <div class="col-6"> 5.8 फूट </div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Height.marathi}} </div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">रक्त गट:</strong> </div>
-                  <div class="col-6">B <sup>Ve+</sup></div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.BloodGroup.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">गोत्र:</strong> </div>
-                  <div class="col-6">काश्य</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Gotra.marathi}}</div>
+                </div>
+                <div class="row mb-2" style="text-align-last: left;">
+                  <div class="col-6"><strong class="text-uppercase">रास:</strong> </div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Ras.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">कुलदैवत:</strong> </div>
-                  <div class="col-6">खंडोबा (सातारा)</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Kuldaivat.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">रास नाव:</strong> </div>
-                  <div class="col-6">वेनुदास</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.RasName.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">जात:</strong> </div>
-                  <div class="col-6">हिंदु-मराठा</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.Caste.marathi}}</div>
                 </div>
                 <hr style="background-color:dimgray;height:2px;">
               </div>
@@ -279,11 +280,11 @@
               <div class=" card-body text-center">
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-md-4 "><strong class="text-uppercase">Qualification:</strong> </div>
-                  <div class="col-md-8 TextLeftClass">Master Of Computer Application(MCA Engineering), Pune</div>
+                  <div class="col-md-8 TextLeftClass">{{BiotaDataModel.Qualification.Education.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Job:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Software Engineer in <strong>Siemens Pune</strong>.</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.Qualification.Job.english}}</div>
                 </div>
                 <hr style="background-color:dimgray;height:2px;">
               </div>
@@ -294,11 +295,11 @@
               <div class=" card-body text-center">
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-md-4 "><strong class="text-uppercase">शिक्षण:</strong> </div>
-                  <div class="col-md-8 TextLeftClass">Master of Computer Application (MCA Engineering), पुणे</div>
+                  <div class="col-md-8 TextLeftClass">{{BiotaDataModel.Qualification.Education.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">नोकरी:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Software Engineer in <strong>Siemens Pune</strong>.</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.Qualification.Job.marathi}}</div>
                 </div>
                 <hr style="background-color:dimgray;height:2px;">
               </div>
@@ -310,41 +311,39 @@
               <div class=" card-body text-center">
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4 "><strong class="text-uppercase">Fathers Name:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Late. Baban Bapurao Shinde</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.FatherName.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Mothers Name:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Smt. Kantabai Baban Shinde (Housewife)</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.MotherName.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Sister:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Miss. Yogita Baban Shinde (MBA)</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.SisterName.english}}</div>
+                </div>
+                <div class="row mb-2" style="text-align-last: left;">
+                  <div class="col-sm-4"><strong class="text-uppercase">Brother:</strong> </div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.BrotherName.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Uncle:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Mr. Sunil Bapurao Shinde (Travelling Agency)</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Uncle.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Mama:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Mr. Pralhad Tulshiram Gavali (Palashi), Mr. Dattu Tulshiram
-                    Gavali(Palashi)</div>
+                  <div class="col-sm-8 TextLeftClass">M{{BiotaDataModel.FamilyInformation.Mama.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Aatya:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Mule Patil (Sanjkhed), Bhere Patil (Karajgao)</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Aatya.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Mavashi:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass ">Kale Patil (Pavari), Pandit Patil (Kavali),Rahate
-                    Patil(Vadgaon)</div>
+                  <div class="col-sm-8 TextLeftClass ">{{BiotaDataModel.FamilyInformation.Mavshi.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Relatives:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Thote Patil(Nakshatrvadi), Mule Patil(Gevrai),
-                    Aware Patil(Gevrai), Kale Patil(Pawari),
-                    Pandit Patil(Kavali), Rahate Patil(Wadgaon), Jadhav Patil(Kalamshera),
-                    Vetal Patil(Bhandegaon), Sonawane Patil(Pathri), Pachpute Patil(Palashi),
-                    Bhalekar Patil(Nipani), Pathade Patil(Varzadi)
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Relatives.english}}
                   </div>
                 </div>
                 <hr style="background-color:dimgray;height:2px;">
@@ -356,40 +355,39 @@
               <div class=" card-body text-center">
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4 "><strong class="text-uppercase">वडिलांचे नाव:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">कै. बबन बापूराव शिंदे</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.FatherName.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">आईचे नाव:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">श्रीमती. कांताबाई बबन शिंदे (गृहिणी)</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.MotherName.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">बहिनीचे नाव:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">कु. योगिता बबन शिंदे (MBA)</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.SisterName.marathi}}</div>
+                </div>
+                <div class="row mb-2" style="text-align-last: left;">
+                  <div class="col-sm-4"><strong class="text-uppercase">भावाचे नाव:</strong> </div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.BrotherName.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">काका:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">श्री. सुनील बापूराव शिंदे (Traveling Agency)</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Uncle.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">मामा:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">श्री. प्रलाद तुळशिराम गवळी पा. (पळाशी), श्री. दत्तू तुळशीराम गवळी
-                    पा. (पळाशी)</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Mama.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">आत्या:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">मुळे.पा (सांजखेड), भेरे.पा (करजगाव)</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Aatya.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">मावशी:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass ">काळे पा. (पवरी), पंडित पा. (कवली), राहते पा. (वडगाव)</div>
+                  <div class="col-sm-8 TextLeftClass ">{{BiotaDataModel.FamilyInformation.Mavshi.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">नाते संबंध:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">थोटे पाटील (नक्षत्रवाडी), मुळे पाटील (गेवराई), आवरे पाटील (गेवराई),
-                    काळे पाटील (पवरी),
-                    पंडित पाटील (कवली), राहते पाटील (वडगाव), जाधव पाटील (कलामशेरा), वेताळ पाटील (भांडेगाव), सोनवने
-                    पाटील (पाथरी), पाचपुते पाटील (पळाशी),
-                    भालेकर पाटील (निपानी), पठाडे पाटील (वरझडी)
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Relatives.marathi}}
                   </div>
                 </div>
                 <hr style="background-color:dimgray;height:2px;">
@@ -401,13 +399,13 @@
             <div class="tab-pane text-center gallery " id="favorite">
               <div class="row">
                 <div class="col-md-5 ml-auto">
-                  <img src="../../assets/SK/SK (6).jpg" class="rounded shadow-lg">
-                  <img src="../../assets/SK/SK (5).jpg" class="rounded shadow-lg">
+                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo1" class="rounded shadow-lg">
+                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo2" class="rounded shadow-lg">
                 </div>
                 <div class="col-md-5 mr-auto">
-                  <img src="../../assets/SK/SK (3).jpg" class="rounded shadow-lg">
-                  <img src="../../assets/SK/SK (4).jpg" class="rounded shadow-lg">
-                  <img src="../../assets/SK/SK (2).jpg" class="rounded shadow-lg">
+                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo3" class="rounded shadow-lg">
+                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo4" class="rounded shadow-lg">
+                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo5" class="rounded shadow-lg">
                 </div>
               </div>
             </div>
@@ -416,13 +414,13 @@
             <div class="tab-pane text-center gallery " id="favorite">
               <div class="row">
                 <div class="col-md-5 ml-auto">
-                  <img src="../../assets/SK/SK (6).jpg" class="rounded shadow-lg">
-                  <img src="../../assets/SK/SK (5).jpg" class="rounded shadow-lg">
+                  <img src="assets/SK/SK (6).jpg" class="rounded shadow-lg">
+                  <img src="assets/SK/SK (5).jpg" class="rounded shadow-lg">
                 </div>
                 <div class="col-md-5 mr-auto">
-                  <img src="../../assets/SK/SK (3).jpg" class="rounded shadow-lg">
-                  <img src="../../assets/SK/SK (4).jpg" class="rounded shadow-lg">
-                  <img src="../../assets/SK/SK (2).jpg" class="rounded shadow-lg">
+                  <img src="assets/SK/SK (3).jpg" class="rounded shadow-lg">
+                  <img src="assets/SK/SK (4).jpg" class="rounded shadow-lg">
+                  <img src="assets/SK/SK (2).jpg" class="rounded shadow-lg">
                 </div>
               </div>
             </div>
@@ -433,26 +431,26 @@
               <div class=" card-body text-center">
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4 "><strong class="text-uppercase">Email:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Karanshinde8282@gmail.com</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.ContactMe.EmailId.english}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Mobile No.:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">9511789722</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.ContactMe.MobileNo.english}}</div>
                 </div>
                 <hr style="background-color:dimgray;height:2px;">
               </div>
             </div>
           </div>
           <div class="tab-pane  text-center" id="ContactMe" *ngIf="!isEnglish">
-            <div class="col-md-10 ml-auto mr-auto clearfix shadow-lg p-4 mb-4 bg-white" >
+            <div class="col-md-10 ml-auto mr-auto clearfix shadow-lg p-4 mb-4 bg-white">
               <div class=" card-body text-center">
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4 "><strong class="text-uppercase">ईमेल:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">Karanshinde8282@gmail.com</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.ContactMe.EmailId.marathi}}</div>
                 </div>
                 <div class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">मोबाइल नंबर:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">9511789722</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.ContactMe.MobileNo.marathi}}</div>
                 </div>
                 <hr style="background-color:dimgray;height:2px;">
               </div>
@@ -463,7 +461,7 @@
       </div>
     </div>
   </div>
-  <footer class="footer text-center" style="background-image:url('../../assets/paint.jpg');">
+  <footer class="footer text-center" style="background-image:url('assets/paint.jpg');">
     <p style="color:black"><strong>Copyright © Biota-Gen 2020 Contact Us At</strong></p>
     <p style="color:black"><strong>Prashant Harde(9096062818), Karan Shinde(9511789722)</strong></p>
     <p><a href="mailto:biotagen@gmail.com" target="_blank"><strong>biotagen@gmail.com</strong></a></p>

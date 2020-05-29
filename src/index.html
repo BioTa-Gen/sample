@@ -22,32 +22,8 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-<script> displayCD(0);
 
-  function displayCD(i) {
-    var xmlhttp = new XMLHttpRequest(); 
-    xmlhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        myFunction(this, i);
-        alert("Asd");
-      }
-    };
-    xmlhttp.open("GET", "../../assets/CD_file.xml", true);
-    xmlhttp.send();
-  }
-
-  function myFunction(xml, i) {
-    var xmlDoc = xml.responseXML;
-    x = xmlDoc.getElementsByTagName("note");
-    document.getElementById("note").innerHTML =
-      "to: " +
-      x[i].getElementsByTagName("to")[0].childNodes[0].nodeValue +
-      "<br>from: " +
-      x[i].getElementsByTagName("from")[0].childNodes[0].nodeValue +
-      "<br>heading: " +
-      x[i].getElementsByTagName("heading")[0].childNodes[0].nodeValue;
-  }</script>
-  </head>
+</head>
 
 <body>
   <app-root></app-root>
