@@ -15,17 +15,17 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="mailto:karanshinde8282@gmail.com" target="_blank">
+            <a class="nav-link" [href]="BiotaDataModel.Facebook" target="_blank">
               <i class="fa fa-envelope"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.facebook.com/karan.shinde.714" target="_blank">
+            <a class="nav-link" [href]="BiotaDataModel.Instagram" target="_blank">
               <i class="fa fa-facebook-square"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/kkaran_sshinde/" target="_blank">
+            <a class="nav-link" [href]="BiotaDataModel.Email" target="_blank">
               <i class="fa fa-instagram"></i>
             </a>
           </li>
@@ -34,7 +34,8 @@
     </div>
   </nav>
 
-  <div class="page-header header-filter" data-parallax="true" style="background-image:url('assets/paint.jpg');">
+  <div class="page-header header-filter" data-parallax="true"
+    style="background-image:url('assets/BackgroundCover.jpg');">
   </div>
   <div class="main main-raised">
     <div class="profile-content">
@@ -43,38 +44,34 @@
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile">
               <div class="avatar">
-                <img [src]="BiotaDataModel.Photos.ProfilePhotoName" alt="Circle Image" class="ProfilePhotoRounded ">
+                <img [src]="BiotaDataModel.Photos?.ProfilePhotoName" alt="Circle Image" class="ProfilePhotoRounded">
               </div>
               <div class="name">
-                <h2 class="title" *ngIf="isEnglish">{{BiotaDataModel.Name.english}}</h2>
-                <h2 class="title" *ngIf="!isEnglish"> {{BiotaDataModel.Name.marathi}}</h2>
-
-                <h5>"{{BiotaDataModel.JobProfile.english}}"</h5>
-                <a href="https://www.facebook.com/karan.shinde.714" class="btn btn-just-icon btn-link"
+                <h2 class="title" *ngIf="isEnglish">{{BiotaDataModel.Name?.english}}</h2>
+                <h2 class="title" *ngIf="!isEnglish"> {{BiotaDataModel.Name?.marathi}}</h2>
+                <h5>"{{BiotaDataModel.JobProfile?.english}}"</h5>
+                <a [href]="BiotaDataModel.Facebook" class="btn btn-just-icon btn-link"
                   style="background-color: darkcyan;"><i class="fa fa-facebook-square" style="color: white;"></i></a>
-                <a href="https://www.instagram.com/kkaran_sshinde/" class="btn btn-just-icon btn-link"
+                <a [href]="BiotaDataModel.Instagram" class="btn btn-just-icon btn-link"
                   style="background-color: darkcyan;"><i class="fa fa-instagram" style="color: white;"></i></a>
-                <a href="mailto:karanshinde8282@gmail.com" class="btn btn-just-icon btn-link"
+                <a [href]="BiotaDataModel.Email" class="btn btn-just-icon btn-link"
                   style="background-color: darkcyan;"><i class="fa fa-envelope" style="color: white;"></i></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="description text-center" *ngIf="isEnglish">
-          <p style="font-weight:500; font-size:17px;"><em>Software Engineer at <strong> <a
-                  href="https://new.siemens.com/in/en.html">{{BiotaDataModel.CompanyName.english}}</a> </strong> Since
-              Last 3
-              Years.</em></p>
-          <p style="font-weight:500; font-size:17px;"><em><strong style="color:darkcyan">
-                {{BiotaDataModel.Hobby.english}}</strong></em></p>
-        </div>
-        <div class="description text-center" *ngIf="!isEnglish">
-          <p style="font-weight:500; font-size:17px;"><em><strong> <a href="https://new.siemens.com/in/en.html">
-                  {{BiotaDataModel.CompanyName.marathi}}</a> </strong> येथे सॉफ्टवेअर
-              अभियंता.</em></p>
-          <p style="font-weight:500; font-size:17px;"><em><strong style="color:darkcyan">
+        <div class="description text-center">
+          <p style="font-weight:500; font-size:17px;"><em>{{BiotaDataModel.JobProfile?.english}} at <strong> 
+            <a [href]="BiotaDataModel.CompanyLink">{{BiotaDataModel.CompanyName.english}}</a> </strong>
+              Since Last {{BiotaDataModel.CompanyExperience}}</em></p>
+          <p style="font-weight:500; font-size:17px;" *ngIf="isEnglish"><em><strong style="color:darkcyan">
+                {{BiotaDataModel.Hobby?.english}}</strong></em></p>
+          <p style="font-weight:500; font-size:17px;" *ngIf="!isEnglish"><em><strong style="color:darkcyan">
                 {{BiotaDataModel.Hobby.marathi}}</strong> </em></p>
         </div>
+
+
+
         <div class="description text-center" *ngIf="isEnglish">
           <button class="btn" style=" background-color: darkcyan;
                   border: none;
@@ -167,51 +164,63 @@
           <div class="tab-pane active text-center " id="PersonalInformation" *ngIf="isEnglish">
             <div class="col-md-10 ml-auto mr-auto shadow-lg p-4 mb-4 bg-white rounded">
               <div class=" card-body text-center">
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="!IsStringNullOrEmpty(BiotaDataModel.PersonalInformation?.FullName?.english)" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Name:</strong> </div>
-                  <div class="col-6">{{BiotaDataModel.PersonalInformation.FullName.english}}</div>
+                  <div class="col-6">{{BiotaDataModel.PersonalInformation.FullName?.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="!IsStringNullOrEmpty(BiotaDataModel.PersonalInformation?.DateOfBirth?.english)" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Birth Date:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.DateOfBirth.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="!IsStringNullOrEmpty(BiotaDataModel.PersonalInformation?.BirthPlace?.english)" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Birth Place:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.BirthPlace.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.BirthTime?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Birth Time:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.BirthTime.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Colour?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Colour:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Colour.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Height?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Height:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Height.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.BloodGroup?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Blood Group:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.BloodGroup.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Gotra?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Gotra:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Gotra.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Ras?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Ras:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Ras.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Kuldaivat?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Kuldaivat:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Kuldaivat.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.RasName?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Ras Name:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.RasName.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Caste?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">Caste:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Caste.english}}</div>
                 </div>
@@ -222,51 +231,63 @@
           <div class="tab-pane active text-center " id="PersonalInformation" *ngIf="!isEnglish">
             <div class="col-md-10 ml-auto mr-auto shadow-lg p-4 mb-4 bg-white rounded">
               <div class=" card-body text-center">
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.FullName?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">मुलाचे नाव:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.FullName.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.DateOfBirth?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">जन्म दिनांक:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.DateOfBirth.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.BirthPlace?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">जन्म ठिकाण:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.BirthPlace.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.BirthTime?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">जन्म वेळ:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.BirthTime.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Colour?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">रंग :</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Colour.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Height?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">ऊंची:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Height.marathi}} </div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.BloodGroup?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">रक्त गट:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.BloodGroup.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Gotra?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">गोत्र:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Gotra.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Ras?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">रास:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Ras.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Kuldaivat?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">कुलदैवत:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Kuldaivat.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.RasName?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">रास नाव:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.RasName.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.PersonalInformation?.Caste?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-6"><strong class="text-uppercase">जात:</strong> </div>
                   <div class="col-6">{{BiotaDataModel.PersonalInformation.Caste.marathi}}</div>
                 </div>
@@ -278,11 +299,12 @@
           <div class="tab-pane" id="Qualification" *ngIf="isEnglish">
             <div class="col-md-10 ml-auto mr-auto shadow-lg p-4 mb-4 bg-white">
               <div class=" card-body text-center">
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.Qualification?.Education?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-md-4 "><strong class="text-uppercase">Qualification:</strong> </div>
                   <div class="col-md-8 TextLeftClass">{{BiotaDataModel.Qualification.Education.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.Qualification?.Job?.english" class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Job:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.Qualification.Job.english}}</div>
                 </div>
@@ -293,11 +315,12 @@
           <div class="tab-pane" id="Qualification" *ngIf="!isEnglish">
             <div class="col-md-10 ml-auto mr-auto shadow-lg p-4 mb-4 bg-white">
               <div class=" card-body text-center">
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.Qualification?.Education?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-md-4 "><strong class="text-uppercase">शिक्षण:</strong> </div>
                   <div class="col-md-8 TextLeftClass">{{BiotaDataModel.Qualification.Education.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.Qualification?.Job?.marathi" class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">नोकरी:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.Qualification.Job.marathi}}</div>
                 </div>
@@ -309,39 +332,58 @@
           <div class="tab-pane text-center" id="FamilyInformation" *ngIf="isEnglish">
             <div class="col-md-10 ml-auto mr-auto clearfix shadow-lg p-4 mb-4 bg-white">
               <div class=" card-body text-center">
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.GrandfatherName?.english" class="row mb-2"
+                  style="text-align-last: left;">
+                  <div class="col-sm-4 "><strong class="text-uppercase">Grandfather:</strong> </div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.GrandfatherName.english}}</div>
+                </div>
+                <div *ngIf="BiotaDataModel.FamilyInformation?.GrandmotherName?.english" class="row mb-2"
+                  style="text-align-last: left;">
+                  <div class="col-sm-4 "><strong class="text-uppercase">Grandmother:</strong> </div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.GrandmotherName.english}}</div>
+                </div>
+                <div *ngIf="BiotaDataModel.FamilyInformation?.FatherName?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4 "><strong class="text-uppercase">Fathers Name:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.FatherName.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.MotherName?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Mothers Name:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.MotherName.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.SisterName?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Sister:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.SisterName.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.BrotherName?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Brother:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.BrotherName.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Uncle?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Uncle:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Uncle.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Mama?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Mama:</strong> </div>
-                  <div class="col-sm-8 TextLeftClass">M{{BiotaDataModel.FamilyInformation.Mama.english}}</div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Mama.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Aatya?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Aatya:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Aatya.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Mavshi?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Mavashi:</strong> </div>
                   <div class="col-sm-8 TextLeftClass ">{{BiotaDataModel.FamilyInformation.Mavshi.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Relatives?.english" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Relatives:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Relatives.english}}
                   </div>
@@ -353,39 +395,58 @@
           <div class="tab-pane text-center" id="FamilyInformation" *ngIf="!isEnglish">
             <div class="col-md-10 ml-auto mr-auto clearfix shadow-lg p-4 mb-4 bg-white">
               <div class=" card-body text-center">
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.GrandfatherName?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
+                  <div class="col-sm-4 "><strong class="text-uppercase">आजोबा:</strong> </div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.GrandfatherName.marathi}}</div>
+                </div>
+                <div *ngIf="BiotaDataModel.FamilyInformation?.GrandmotherName?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
+                  <div class="col-sm-4 "><strong class="text-uppercase">आजी:</strong> </div>
+                  <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.GrandmotherName.marathi}}</div>
+                </div>
+                <div *ngIf="BiotaDataModel.FamilyInformation?.FatherName?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4 "><strong class="text-uppercase">वडिलांचे नाव:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.FatherName.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.MotherName?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">आईचे नाव:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.MotherName.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.SisterName?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">बहिनीचे नाव:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.SisterName.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.BrotherName?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">भावाचे नाव:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.BrotherName.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Uncle?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">काका:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Uncle.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Mama?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">मामा:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Mama.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Aatya?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">आत्या:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Aatya.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Mavshi?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">मावशी:</strong> </div>
                   <div class="col-sm-8 TextLeftClass ">{{BiotaDataModel.FamilyInformation.Mavshi.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.FamilyInformation?.Relatives?.marathi" class="row mb-2"
+                  style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">नाते संबंध:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.FamilyInformation.Relatives.marathi}}
                   </div>
@@ -399,13 +460,20 @@
             <div class="tab-pane text-center gallery " id="favorite">
               <div class="row">
                 <div class="col-md-5 ml-auto">
-                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo1" class="rounded shadow-lg">
-                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo2" class="rounded shadow-lg">
+                  <img *ngIf="BiotaDataModel.Photos?.GalleryPhoto?.Photo1"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo1" class="rounded shadow-lg">
+                  <img *ngIf="BiotaDataModel.Photos?.GalleryPhoto?.Photo2"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo2" class="rounded shadow-lg">
+                    <img *ngIf="BiotaDataModel.Photos?.GalleryPhoto?.Photo3"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo3" class="rounded shadow-lg">
                 </div>
                 <div class="col-md-5 mr-auto">
-                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo3" class="rounded shadow-lg">
-                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo4" class="rounded shadow-lg">
-                  <img [src]="BiotaDataModel.Photos.GalleryPhoto.Photo5" class="rounded shadow-lg">
+                  <img *ngIf="BiotaDataModel.Photos?.GalleryPhoto?.Photo4"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo4" class="rounded shadow-lg">
+                  <img *ngIf="BiotaDataModel?.Photos?.GalleryPhoto?.Photo5"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo5" class="rounded shadow-lg">
+                    <img *ngIf="BiotaDataModel?.Photos?.GalleryPhoto?.Photo6"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo6" class="rounded shadow-lg">
                 </div>
               </div>
             </div>
@@ -414,13 +482,20 @@
             <div class="tab-pane text-center gallery " id="favorite">
               <div class="row">
                 <div class="col-md-5 ml-auto">
-                  <img src="assets/SK/SK (6).jpg" class="rounded shadow-lg">
-                  <img src="assets/SK/SK (5).jpg" class="rounded shadow-lg">
+                  <img *ngIf="BiotaDataModel.Photos?.GalleryPhoto?.Photo1"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo1" class="rounded shadow-lg">
+                  <img *ngIf="BiotaDataModel.Photos?.GalleryPhoto?.Photo2"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo2" class="rounded shadow-lg">
+                    <img *ngIf="BiotaDataModel.Photos?.GalleryPhoto?.Photo3"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo3" class="rounded shadow-lg">
                 </div>
                 <div class="col-md-5 mr-auto">
-                  <img src="assets/SK/SK (3).jpg" class="rounded shadow-lg">
-                  <img src="assets/SK/SK (4).jpg" class="rounded shadow-lg">
-                  <img src="assets/SK/SK (2).jpg" class="rounded shadow-lg">
+                  <img *ngIf="BiotaDataModel.Photos?.GalleryPhoto?.Photo4"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo4" class="rounded shadow-lg">
+                  <img *ngIf="BiotaDataModel.Photos?.GalleryPhoto?.Photo5"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo5" class="rounded shadow-lg">
+                    <img *ngIf="BiotaDataModel?.Photos?.GalleryPhoto?.Photo6"
+                    [src]="BiotaDataModel.Photos.GalleryPhoto.Photo6" class="rounded shadow-lg">
                 </div>
               </div>
             </div>
@@ -429,11 +504,11 @@
           <div class="tab-pane  text-center" id="ContactMe" *ngIf="isEnglish">
             <div class="col-md-10 ml-auto mr-auto clearfix shadow-lg p-4 mb-4 bg-white">
               <div class=" card-body text-center">
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.ContactMe?.EmailId?.english" class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4 "><strong class="text-uppercase">Email:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.ContactMe.EmailId.english}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.ContactMe?.MobileNo?.english" class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">Mobile No.:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.ContactMe.MobileNo.english}}</div>
                 </div>
@@ -444,11 +519,11 @@
           <div class="tab-pane  text-center" id="ContactMe" *ngIf="!isEnglish">
             <div class="col-md-10 ml-auto mr-auto clearfix shadow-lg p-4 mb-4 bg-white">
               <div class=" card-body text-center">
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.ContactMe?.EmailId?.marathi" class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4 "><strong class="text-uppercase">ईमेल:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.ContactMe.EmailId.marathi}}</div>
                 </div>
-                <div class="row mb-2" style="text-align-last: left;">
+                <div *ngIf="BiotaDataModel.ContactMe?.MobileNo?.marathi" class="row mb-2" style="text-align-last: left;">
                   <div class="col-sm-4"><strong class="text-uppercase">मोबाइल नंबर:</strong> </div>
                   <div class="col-sm-8 TextLeftClass">{{BiotaDataModel.ContactMe.MobileNo.marathi}}</div>
                 </div>

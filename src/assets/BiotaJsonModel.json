@@ -1,27 +1,30 @@
 {
    "Name": {
       "english": "Swapnil Tapkire",
-      "marathi": "स्वप्निल तपकीरे"
+      "marathi": "स्वप्निल तपकिरे"
    },
    "JobProfile": {
       "english": "SOFTWARE ENGINEER",
       "marathi": "SOFTWARE ENGINEER"
    },
-   "Facebook": "xyz",
-   "Instagram": "xyz",
-   "Email": "xyz",
+   "Facebook": "https://www.facebook.com/swapnil.tapkire.5/",
+   "Instagram": "https://www.instagram.com/swapnil_9335/",
+   "Email": "mailto:swapniltapkire9335@gmail.com",
+   "CompanyLink":"https://www.techmahindra.com/en-in/?f=1240047482",
+   "CompanyExperience":"3 Years.",
    "CompanyName": {
       "english": "TechMahindra India Pvt Ltd.",
       "marathi": "TechMahindra India Pvt Ltd."
    },
    "Hobby": {
-      "english": "I love To Travel and Play Cricket.",
-      "marathi": "मला प्रवास करणे आणि क्रिकेट खेळायला आवडते."
+      "english": "I love To Travel, Listen Music and Play Cricket.",
+      "marathi": "मला प्रवास करणे, संगीत ऐकणे आणि क्रिकेट खेळायला आवडते."
    },
    "PersonalInformation": {
+     
       "FullName": {
          "english": "Swapnil Dattatray Tapkire",
-         "marathi": "स्वप्निल दत्तात्रय तपकीरे"
+         "marathi": "स्वप्निल दत्तात्रय तपकिरे"
       },
       "DateOfBirth": {
          "english": "13/06/1994",
@@ -57,7 +60,7 @@
       },
       "Kuldaivat": {
          "english": "Tulja Bhavani(Tuljapur)",
-         "marathi": "तुलजा भवानी (तुलजापुर)"
+         "marathi": "तुळजा भवानी (तुळजापुर)"
       },
       "RasName": {
          "english": "DalDev",
@@ -79,13 +82,21 @@
       }
    },
    "FamilyInformation": {
+      "GrandfatherName": {
+         "english": "Shamrao Bhavadu Tapkire",
+         "marathi": "शामराव भावडू तपकिरे"
+      },
+      "GrandmotherName": {
+         "english": "Sumitra Shamrao Tapkire",
+         "marathi": "सुमित्रा शामराव तपकिरे"
+      },
       "FatherName": {
          "english": "Dattatray Shamrao Tapkire(Business)",
-         "marathi": "दत्तात्रय शामराव तपकीरे (व्यवसाय)"
+         "marathi": "दत्तात्रय शामराव तपकिरे (व्यवसाय)"
       },
       "MotherName": {
          "english": "Vimal Dattatray Tapkire(House Wife)",
-         "marathi": "विमल दत्तात्रय तपकीरे (गृहिणी)"
+         "marathi": "विमल दत्तात्रय तपकिरे (गृहिणी)"
       },
       "SisterName": {
          "english": "",
@@ -93,11 +104,11 @@
       },
       "BrotherName": {
          "english": "Abhijeet Dattatray Tapkire(Company Secretary)",
-         "marathi": "अभिजीत दत्तात्रय तपकीरे( Company Secretary)"
+         "marathi": "अभिजीत दत्तात्रय तपकिरे( Company Secretary)"
       },
       "Uncle": {
          "english": "Janardhan Shamrao Tapkire(Glass & Alluminuam), Sandip Shamrao Tapkire(Ast. Manager)",
-         "marathi": "जनार्दन शामराव तपकीरे(Glass & Alluminuam), संदिप शामराव तपकीरे( Ast. Manager)"
+         "marathi": "जनार्दन शामराव तपकिरे(Glass & Alluminuam), संदिप शामराव तपकिरे( Ast. Manager)"
       },
       "Mama": {
          "english": "Late. Sunil Shankerrao Burkule(Jalna), Bandu Kajalkar(Aurangabad)",
@@ -133,7 +144,7 @@
          "Photo2":"assets/G(2).jpg",
          "Photo3":"assets/G(3).jpg",
          "Photo4":"assets/G(4).jpg",
-         "Photo5":"assets/G(5).jpg"
+         "Photo5":"assets/G(4).jpg"
       }
    }
 }

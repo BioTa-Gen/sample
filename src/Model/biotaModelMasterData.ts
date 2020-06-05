@@ -3,36 +3,41 @@
 // }
 
 export class BiotaDataModel {
-    Name: LanguageModel;
+    public Name?: LanguageModel;
     public JobProfile: LanguageModel;
     Facebook: string;
     Instagram: string;
     Email: string;
     CompanyName: LanguageModel;
+    CompanyLink: string="";
+    CompanyExperience: string;
     Hobby: LanguageModel;
     PersonalInformation: PersonalInformation;
     Qualification: Qualification;
     FamilyInformation: FamilyInformation;
     ContactMe: ContactMe;
-    Photos:Photos;
+    Photos: Photos;
+
+    constructor() {
+
+    }
 }
 
-export interface Photos {
-    ProfilePhotoName:string;
-    GalleryPhoto:Photos;
+export class Photos {
+    ProfilePhotoName: string;
+    GalleryPhoto: GalleryPhoto;
 }
 
-export interface Photos {
+export class GalleryPhoto {
     photo1: string;
     photo2: string;
     photo3: string;
     photo4: string;
     photo5: string;
     photo6: string;
-
 }
 
-export interface PersonalInformation {
+export class PersonalInformation {
     Name: LanguageModel;
     DateOfBirth: LanguageModel;
     BirthPlace: LanguageModel;
@@ -48,16 +53,18 @@ export interface PersonalInformation {
 }
 
 export class LanguageModel {
-    english: string;
-    marathi: string;
+    english: string="";
+    marathi: string="";
 }
 
-export interface ContactMe {
+export class ContactMe {
     EmailId: LanguageModel;
     MobileNo: LanguageModel;
 }
 
-export interface FamilyInformation {
+export class FamilyInformation {
+    GrandfatherName:LanguageModel;
+    GrandmotherName:LanguageModel;
     FatherName: LanguageModel;
     MotherName: LanguageModel;
     SisterName: LanguageModel;
@@ -69,7 +76,7 @@ export interface FamilyInformation {
     Relatives: LanguageModel;
 }
 
-export interface Qualification {
+export class Qualification {
     Education: LanguageModel;
     Job: LanguageModel;
 }

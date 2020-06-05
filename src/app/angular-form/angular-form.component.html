@@ -1,0 +1,13 @@
+<div style="margin: 35px">
+  <json-schema-form
+    [schema]="schema"
+    [layout]="layout"
+    [options]='jsonFormOptions'
+    [framework]="'bootstrap-4'"
+    (onSubmit)="onSubmit($event)"
+    (formSchema)="showFormSchemaFn($event)"
+    (formLayout)="showFormLayoutFn($event)">
+  </json-schema-form>
+  </div>
+  
+  <pre>{{submittedFormData | json}}</pre>
