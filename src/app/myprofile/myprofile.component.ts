@@ -11,7 +11,7 @@ import { Subscription, Observable } from 'rxjs';
 })
 export class MyprofileComponent implements OnInit {
   public BiotaDataModel: BiotaDataModel;
-  isEnglish = true;
+  isEnglish = false;
   xcdfv: Subscription;
   constructor(private httpClient: HttpClient) {
     // var asd = JSON.stringify(jsonData);

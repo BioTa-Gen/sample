@@ -1,13 +1,45 @@
-<div style="margin: 35px">
-  <json-schema-form
-    [schema]="schema"
-    [layout]="layout"
-    [options]='jsonFormOptions'
-    [framework]="'bootstrap-4'"
-    (onSubmit)="onSubmit($event)"
-    (formSchema)="showFormSchemaFn($event)"
-    (formLayout)="showFormLayoutFn($event)">
-  </json-schema-form>
+<!-- <div class="container col-md-12">
+  <div class="row border shadow-lg col-md-12">
+    <img src="assets/Biota-Circle.jpg" alt="Biota Image Icon" style="margin-right:25px;">
+    <h1>BIOTA-GEN</h1>
+    <img src="assets/Business-Crowd.png" alt="Biota Image Icon" style="margin-left:25px;">
+    <div class="col-md-10 ml-auto mr-auto border shadow-lg">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+        <button type="submit" class="btn btn-primary submit-button" [disabled]="!form.valid">Download</button>
+      </form>
+    </div>
+    <footer class="footer text-center">
+      <p style="color:black"><strong>Copyright © Biota-Gen 2020 Contact Us At</strong></p>
+      <p style="color:black"><strong>Prashant Harde(9096062818), Karan Shinde(9511789722), Akash
+          Kale(8379988155)</strong></p>
+      <p><a href="mailto:biotagen@gmail.com" target="_blank"><strong>biotagen@gmail.com</strong></a></p>
+    </footer>
   </div>
-  
-  <pre>{{submittedFormData | json}}</pre>
+</div> -->
+
+<div class="container col-md-12">
+  <div class="row border shadow-lg col-md-12">
+    <div class="col-md-10 ml-auto mr-auto border shadow-lg">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <mat-tab-group>
+          <mat-tab label="Basic Information">
+          </mat-tab>
+          <mat-tab label="Personal Information">
+          </mat-tab>
+          <mat-tab *ngFor="let tab of tabs;let index = index;" [label]="tab.label"
+            [disabled]="index !== 0 && !form.at(index - 1)?.valid">
+            <formly-form [form]="form.at(index)" [model]="model" [fields]="tab.fields" [options]="options[index]">
+            </formly-form>
+          </mat-tab>
+          <mat-tab label="Submit">
+            <div>
+              <button mat-raised-button class="btn btn-primary" [disabled]="!form.valid" type="submit">Submit</button>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </form>
+    </div>
+  </div>
+</div>

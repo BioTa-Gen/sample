@@ -5,6 +5,7 @@
 export class BiotaDataModel {
     public Name?: LanguageModel;
     public JobProfile: LanguageModel;
+    public Address: LanguageModel;
     Facebook: string;
     Instagram: string;
     Email: string;
@@ -47,6 +48,8 @@ export class PersonalInformation {
     BloodGroup: LanguageModel;
     Gotra: LanguageModel;
     Ras: LanguageModel;
+    Gan:LanguageModel;
+    Devak:LanguageModel;
     Kuldaivat: LanguageModel;
     RasName: LanguageModel;
     Cast: LanguageModel;
@@ -79,4 +82,5 @@ export class FamilyInformation {
 export class Qualification {
     Education: LanguageModel;
     Job: LanguageModel;
+    Salary:LanguageModel;
 }

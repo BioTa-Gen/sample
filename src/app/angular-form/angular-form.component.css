@@ -1,0 +1,39 @@
+  .row {
+    width: 100%;
+    background: #009bff;
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    margin-right:0px;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    padding: 50px 50px 10px 50px;
+  }
+
+  img{
+      height: 50px;
+  }
+
+  .ml-auto{
+    
+    max-width: 100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-top:30px;
+    margin-bottom:50px;
+  }

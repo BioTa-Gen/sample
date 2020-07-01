@@ -1,0 +1,29 @@
+{
+   "schema": [
+      {
+         "label": "Personal data",
+         "fields": [
+            {
+               "title": "A registration form",
+               "type": "object",
+               "properties": {
+                  "Name": {
+                     "type": "object",
+                     "title": "Name",
+                     "properties": {
+                        "english": {
+                           "type": "string",
+                           "title": "English"
+                        },
+                        "marathi": {
+                           "type": "string",
+                           "title": "Marathi"
+                        }
+                     }
+                  }
+               }
+            }
+         ]
+      }
+   ]
+}
